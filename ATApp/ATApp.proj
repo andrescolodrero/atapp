@@ -32,6 +32,9 @@
     <Folder Include="App_Resources\Android\drawable-nodpi">
       <Platform>Android</Platform>
     </Folder>
+    <Folder Include="js" />
+    <Folder Include="images" />
+    <Folder Include="data" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="App_Resources\iOS\icon.png" />
@@ -57,6 +60,18 @@
     <Resource Include="App_Resources\Android\drawable-nodpi\splashscreen.9.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="about.html" />
+    <Content Include="data\atachapters.sql" />
+    <Content Include="data\data.sql" />
+    <Content Include="disclaimer.html" />
+    <Content Include="images\icons-18-black.png" />
+    <Content Include="images\icons-18-white.png" />
+    <Content Include="images\icons-36-black.png" />
+    <Content Include="images\icons-36-white.png" />
+    <Content Include="images\ios-pack-color.png" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\logo2.png" />
+    <Content Include="styles\logobig.png" />
     <Content Include="index.html" />
     <Content Include="jquery-mobile\images\ajax-loader.gif" />
     <Content Include="jquery-mobile\images\icons-18-black.png" />
@@ -66,7 +81,10 @@
     <Content Include="jquery-mobile\jquery-1.8.2.min.js" />
     <Content Include="jquery-mobile\jquery.mobile-1.3.0.min.css" />
     <Content Include="jquery-mobile\jquery.mobile-1.3.0.min.js" />
-    <Content Include="js\hello-world.js" />
+    <Content Include="js\codiqa.js" />
+    <Content Include="js\main2.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\sql.js" />
     <Content Include="styles\main.css" />
     <Content Include="cordova.ios.js">
       <Platform>iOS</Platform>
@@ -76,6 +94,7 @@
       <Platform>Android</Platform>
       <TargetName>cordova.js</TargetName>
     </Content>
+    <Content Include="styles\media.css" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Telerik\ICE\Tools\Mobile\MobileTools.targets" />
 </Project>
