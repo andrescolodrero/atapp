@@ -121,7 +121,8 @@ $(document).bind('pageinit'), (function () {
         
 
 //Trigger the first search. 
-    $( "#btnsearch" ).bind( "click", function (  ) {
+    $( "#btnsearch" ).bind( "tap", function (  ) {
+        alert("tap!");
           app.generateAtaChapters(); 
 		value = $("#initsearch").val();		
         
