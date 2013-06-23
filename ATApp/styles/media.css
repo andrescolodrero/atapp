@@ -9,3 +9,7 @@ img {
     height: auto;
     width: auto\9; /* ie8 */
 }
+
+a {
+ text-decoration: none !important;   
+}

@@ -18,3 +18,75 @@ body
 {
     text-align:center;
 }
+.alphascroll {
+	color: #666;
+	text-shadow: none;
+	list-style: none;
+	position: fixed;
+	top: 7%;
+	right: 4px; 
+	z-index: 1001;
+	font-size: 11px;
+	font-weight: bold;
+	margin-left: 0;
+	padding-left: 0;
+	border-radius: 24px;
+	background-color: rgba(102,102,102,0.2);
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.alphascroll:active {
+
+}
+.alphascroll li:hover {
+	display: block;
+	width: 1em;
+	text-align: center;
+	line-height: 14px;
+	margin: 0;
+	width: 28px;
+          background-color: rgba(94,135,176,0.4);
+}
+
+.alphascroll li {
+	display: block;
+	width: 1em;
+	text-align: center;
+	line-height: 14px;
+	margin: 0;
+	width: 28px;
+}
+
+.alphascroll a {
+	text-decoration: none;
+    color: black;
+    font-weight: normal;
+}
+    .alphascroll a:hover {
+    text-decoration:none;
+	background: #5e87b0;
+            color: white;
+    font-weight: normal;
+    background-color: rgba(94,135,176,0.4);
+}
+
+  .alphascroll a:active {
+    text-decoration:none;
+	background: #5e87b0;
+            color: white;
+    font-weight: normal;
+    
+}
+
+.alphascroll li.truncated {
+	line-height: 4px;
+	font-size: 10px;
+	font-weight: normal;
+}
+
+#atadetails {
+    margin-left: 5px;
+    margin-right: 5px;
+    }
