@@ -8,7 +8,7 @@
     <IsRunnable>true</IsRunnable>
     <TemplateAppName>Cordova240</TemplateAppName>
     <AndroidPermissions>android.permission.CAMERA;android.permission.VIBRATE;android.permission.ACCESS_COARSE_LOCATION;android.permission.ACCESS_FINE_LOCATION;android.permission.ACCESS_LOCATION_EXTRA_COMMANDS;android.permission.READ_PHONE_STATE;android.permission.INTERNET;android.permission.RECEIVE_SMS;android.permission.RECORD_AUDIO;android.permission.MODIFY_AUDIO_SETTINGS;android.permission.READ_CONTACTS;android.permission.WRITE_CONTACTS;android.permission.WRITE_EXTERNAL_STORAGE;android.permission.ACCESS_NETWORK_STATE;android.permission.ACCOUNT_MANAGER;android.permission.GET_ACCOUNTS;android.permission.MANAGE_ACCOUNTS;android.permission.BROADCAST_STICKY</AndroidPermissions>
-    <DeviceOrientations>Portrait;Landscape</DeviceOrientations>
+    <DeviceOrientations>Portrait</DeviceOrientations>
     <iOSStatusBarStyle>Default</iOSStatusBarStyle>
     <AndroidHardwareAcceleration>false</AndroidHardwareAcceleration>
   </PropertyGroup>
@@ -64,27 +64,35 @@
     <Content Include="data\atachapters.sql" />
     <Content Include="data\data.sql" />
     <Content Include="disclaimer.html" />
-    <Content Include="images\icons-18-black.png" />
-    <Content Include="images\icons-18-white.png" />
-    <Content Include="images\icons-36-black.png" />
-    <Content Include="images\icons-36-white.png" />
     <Content Include="images\ios-pack-color.png" />
     <Content Include="images\logo.png" />
     <Content Include="images\logo2.png" />
-    <Content Include="js\rightmenu.js" />
-    <Content Include="kendo\js\jquery.min.js" />
-    <Content Include="kendo\js\kendo.mobile.min.js" />
-    <Content Include="kendo\styles\images\back.png" />
-    <Content Include="kendo\styles\images\KendoUI.ttf" />
-    <Content Include="kendo\styles\images\KendoUI.woff" />
-    <Content Include="kendo\styles\kendo.mobile.all.min.css" />
-    <Content Include="styles\logobig.png" />
-    <Content Include="index.html" />
-    <Content Include="jquery-mobile\images\ajax-loader.gif" />
     <Content Include="jquery-mobile\images\icons-18-black.png" />
     <Content Include="jquery-mobile\images\icons-18-white.png" />
     <Content Include="jquery-mobile\images\icons-36-black.png" />
     <Content Include="jquery-mobile\images\icons-36-white.png" />
+    <Content Include="js\rightmenu.js" />
+    <Content Include="styles\fontawesome-ie7.css" />
+    <Content Include="styles\fontawesome-webfont.afm" />
+    <Content Include="styles\fontawesome-webfont.eot" />
+    <Content Include="styles\fontawesome-webfont.svg" />
+    <Content Include="styles\fontawesome-webfont.ttf" />
+    <Content Include="styles\fontawesome-webfont.woff" />
+    <Content Include="styles\fontawesome.css" />
+    <Content Include="styles\fontawesome.less" />
+    <Content Include="styles\fontAwesome.otf" />
+    <Content Include="styles\fontawesome.scss" />
+    <Content Include="styles\images\ajax-loader.gif" />
+    <Content Include="styles\images\ajax-loader.png" />
+    <Content Include="styles\images\icons-18-black.png" />
+    <Content Include="styles\images\icons-18-white.png" />
+    <Content Include="styles\images\icons-36-black.png" />
+    <Content Include="styles\images\icons-36-white.png" />
+    <Content Include="styles\jqm-icon-pack-3.0.0-fa.css" />
+    <Content Include="styles\jquery.mobile.flatui.css" />
+    <Content Include="styles\logobig.png" />
+    <Content Include="index.html" />
+    <Content Include="jquery-mobile\images\ajax-loader.gif" />
     <Content Include="jquery-mobile\jquery-1.8.2.min.js" />
     <Content Include="jquery-mobile\jquery.mobile-1.3.0.min.css" />
     <Content Include="jquery-mobile\jquery.mobile-1.3.0.min.js" />
