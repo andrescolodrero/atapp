@@ -1,319 +1,341 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>ATApp</title>
-        <link href="jquery-mobile/jquery.mobile-1.3.0.min.css" rel="stylesheet" type="text/css" />
-        <link href="styles/main.css" rel="stylesheet" type="text/css" />
-        <link href="styles/media.css" rel="stylesheet" type="text/css" />
+	<head>
+		<meta charset="UTF-8" />
+		<title>ATApp</title>
 
-        <script src="cordova.js" type="text/javascript"></script>
-        <script src="jquery-mobile/jquery-1.8.2.min.js" type="text/javascript"></script>
-        <script src="jquery-mobile/jquery.mobile-1.3.0.min.js" type="text/javascript"></script>
-      
-        <script src="js/main2.js" type="text/javascript"></script>
-        <script src="js/sql.js" type="text/javascript"></script>
-        <script src="js/codiqa.js" type="text/javascript"></script>
-    </head> 
-    <body> 
-        <!-- HOME PAGE -->
-        <div data-role="page" id="home">
-            
-            <div data-theme="c" data-role="header" data-position="fixed">
-                <a data-role="button" data-transition="slide" data-theme="d" href="#info"
-          data-icon="bars" data-iconpos="notext" class="ui-btn-left">
-          </a>
-                  
-                <h3 >ATApp Test</h3>  
-            </div>    
-                
-            <div data-role="content">  
-                <div class="center-wrapper">
-                    <img  src="images/logo.png" alt="Mymxlog">
-                </div>            
-            <div>
-              <p data-mce-style="text-align: center;" style="text-align: center;">
-                  <span style="font-size: medium;" data-mce-style="font-size: medium;">
-                      <strong style="font-family: verdana, geneva;">
-                          <font size="3">
-                          </font>
-                      </strong>
-                      <strong style="font-family: verdana, geneva; font-size: small;">
-                          Aircraft ATA
-                      </strong>
-                  </span>
-                  <span style="font-family: verdana, geneva; font-size: small;" data-mce-style="font-family: verdana, geneva; font-size: small;">
-                      Chapter toolbox!
-                  </span>
-              </p>
-              <p data-mce-style="text-align: center;" style="text-align: center;">
-                  <span style="font-family: verdana, geneva; font-size: small;" data-mce-style="font-family: verdana, geneva; font-size: small;">
-                      Brought to you by&nbsp;
-                      <strong>
-                          mymxlog.com
-                      </strong>
-                  </span>
-              </p>
-          </div>
-            
-                <ul data-role="listview" >
-                    <li><a  href="#byname"  data-transition="slide" >ATA by Chapters</a></li>
-                    <li><a href="#bynumber" data-transition="slide">ATA by Numbers</a></li>
-                    
-                </ul>
-                 
-           
-            
-             <div class="text-wrapper">
-                   <p>&nbsp;</p> 
-              <div class="ui-grid-a">
-            <div class="ui-block-a">
-                <div data-role="fieldcontain">
-                    <input name="" id="initsearch" placeholder="" value="" type="search">
-                </div>
-            </div>
-            <div class="ui-block-b">
-                <a data-role="button" id="btnsearch" data-theme="a">
-                    Go
-                </a>
-            </div>
-        </div>
-             </div>
-             </div>
-            <div data-role="tabbar" data-iconpos="top" data-theme="a">
-          <ul >
-              <li>
-                  <a href="#byname"  data-transition="none" data-theme="" data-icon="grid">
-                      ATA Chapters
-                  </a>
-              </li>
-              <li>
-                  <a href="#bynumber" data-transition="none" data-theme="" data-icon="info">
-                      ATA Numbers
-                  </a>
-              </li>
-              <li>
-                  <a href="#search" data-transition="none" data-theme="" data-icon="search">
-                      ATA Search
-                  </a>
-              </li>
-          </ul>
-      </div>
-            
-        </div>
-      
-        
-            
-         <!-- BY Name Partial PAGE -->   
-         <div data-role="page" id="byname" data-add-back-btn="true" data-direction="reverse" data-rel="back">
-            
-              <div data-theme="c" data-role="header" data-position="fixed">          
-                  <a href="index.html" data-role="button" data-icon="home" data-iconpos="notext" class="ui-btn-right"></a>
-                <h3>ATA By Number</h3>  
-              </div>    
-           
-            <div data-role="content">
-           
-              <div data-role="collapsible" data-inset="false">  
-                      <h3>GENERAL</h3>
-                   <ul data-role="listview" id="general" >
-                    
-                   </ul>
-              </div>   
-              
-              <div data-role="collapsible" data-inset="false">  
-                      <h3>AIRFRAME SYSTEMS</h3>
-                   <ul data-role="listview" id="airframesystems" >
-                    
-                   </ul>
-              </div> 
-               <div data-role="collapsible" data-inset="false">  
-                      <h3>STRUCTURES</h3>
-                   <ul data-role="listview" id="structures" >
-                    
-                   </ul>
-              </div>
-               <div data-role="collapsible" data-inset="false">  
-                      <h3>PROPELLER/ROTOR</h3>
-                   <ul data-role="listview" id="propellerrotor">
-                    
-                   </ul>
-              </div> 
-                 <div data-role="collapsible" data-inset="false">  
-                      <h3>POWER PLANT</h3>
-                   <ul data-role="listview" id="powerplant" >
-                    
-                   </ul>
-              </div>
-                 <div data-role="collapsible" data-inset="false">  
-                      <h3>OTHER</h3>
-                   <ul data-role="listview" id="other" >
-                    
-                   </ul>
-              </div>
-                
-             
-                
-            </div>
- 
-          <div data-role="tabbar" data-iconpos="top" data-theme="a">
-          <ul>
-              <li>
-                  <a href="#byname" data-transition="none" data-theme="" data-icon="grid">
-                      ATA Chapters
-                  </a>
-              </li>
-              <li>
-                  <a href="#bynumber" data-transition="none" data-theme="" data-icon="info">
-                      ATA Numbers
-                  </a>
-              </li>
-              <li>
-                  <a href="#search" data-transition="none" data-theme="" data-icon="search">
-                      ATA Search
-                  </a>
-              </li>
-          </ul>
-      </div>
-    
-        </div>
-        
-        <!-- BY NUmber Page -->
-        <div data-role="page" id="bynumber" data-add-back-btn="true">
-         <div data-theme="c" data-role="header" data-position="fixed">
-                  <a href="index.html" data-role="button" data-icon="home" data-iconpos="notext" class="ui-btn-right"></a>
-                <h3>ATA by Number</h3>  
-            </div>    
-        <ul data-role="listview" id="bynameitems2" data-autodividers="true">
-            
-        </ul>     
-        <div data-role="tabbar" data-iconpos="top" data-theme="a">
-          <ul>
-              <li>
-                  <a href="#byname" data-transition="none" data-theme="" data-icon="grid">
-                      ATA Chapters
-                  </a>
-              </li>
-              <li>
-                  <a href="#bynumber" data-transition="none" data-theme="" data-icon="info">
-                      ATA Numbers
-                  </a>
-              </li>
-              <li>
-                  <a href="#search" data-transition="none" data-theme="" data-icon="search">
-                      ATA Search
-                  </a>
-              </li>
-          </ul>
-      </div>
-        </div>
-        
-        <!-- SEARCH PAGE -->
-        <div data-role="page" id="search" data-add-back-btn="true">
-       <div data-theme="c" data-role="header" data-position="fixed"> 
-             <a href="index.html" data-role="button" data-icon="home" data-iconpos="notext" class="ui-btn-right"></a>
-                  
-                <h3>Search </h3>  
-            </div>  
-        <ul data-role="listview" id="bynameitems" data-filter="true">
-            
-        </ul>     
-        <div data-role="tabbar" data-iconpos="top" data-theme="a">
-          <ul>
-              <li>
-                  <a href="#byname" data-transition="none" data-theme="" data-icon="grid">
-                      ATA Chapters
-                  </a>
-              </li>
-              <li>
-                  <a href="#bynumber" data-transition="none" data-theme="" data-icon="info">
-                      ATA Numbers
-                  </a>
-              </li>
-              <li>
-                  <a href="#search" data-transition="none" data-theme="" data-icon="search">
-                      ATA Search
-                  </a>
-              </li>
-          </ul>
-      </div>
-        </div>
-        
-        <!-- LIST ITEMS PAGE -->
-       <div data-role="page" id="list" data-add-back-btn="true" data-rel="back">
-       <div data-theme="c" data-role="header" data-position="fixed"> 
-                <a href="index.html" data-role="button" data-icon="home" data-iconpos="notext" class="ui-btn-right"></a>
-            <h1 id="atachapters_header">ATA By Name</h1>
-            </div>
-           <a href="#" id="atachapters_text"></a>
-        <ul data-role="listview" id="todoItems"  data-divider-theme="c">
-            
-            
-        </ul>     
-       
-      </div>
-        
-        <!-- DETAILS  -->
-       <div data-role="page" id="detail" data-add-back-btn="true">
-       <div data-theme="c" data-role="header" data-position="fixed"> 
-                <a href="index.html" data-role="button" data-icon="home" data-iconpos="notext" class="ui-btn-right"></a>
-            <h1 id="atachapters_header">ATA Details</h1>
-            </div>
-           <p id="atadetails">
-               
-           </p>
-           
-       
-      </div>
-        
-        <!-- Info Part -->
-        <div data-role="page" id="info" data-add-back-btn="true">
-        <div data-theme="c" data-role="header" data-position="fixed">
-               
-       
-                  
-                <h3>ATApp</h3>  
-            </div>    
-      <div data-role="content" style="padding: 8px">
-          <ul data-role="listview" data-divider-theme="d" data-inset="false">
-              <li data-theme="c">
-                  <a href="about.html" data-transition="slide">
-                      About
-                  </a>
-              </li>
-              <li data-theme="c">
-                  <a href="#page9" data-transition="slide">
-                      Feedback?
-                  </a>
-              </li>
-              <li data-theme="c">
-                  <a href="#page9" data-transition="slide">
-                      Facebook
-                  </a>
-              </li>
-              <li data-theme="c">
-                  <a href="#page9" data-transition="slide">
-                      Linkdin
-                  </a>
-              </li>
-              <li data-theme="c">
-                  <a href="#page9" data-transition="slide">
-                      Twitter
-                  </a>
-              </li>
-              <li data-theme="c">
-                  <a href="disclaimer.html" data-transition="slide">
-                      Disclaimer
-                  </a>
-              </li>
-          </ul>
-          <div style="">
-              <div id="logobig">aa</div>
-          </div>
-      </div>
-        </div>
-    </body>
+		<link href="styles/main.css" rel="stylesheet" type="text/css" />
+		<link href="styles/fontawesome.css" rel="stylesheet" type="text/css" />
+		<link href="styles/jquery.mobile.flatui.css" rel="stylesheet" type="text/css" />
+		<link href="styles/media.css" rel="stylesheet" type="text/css" />
+
+		<script src="cordova.js" type="text/javascript"></script>
+		<script src="jquery-mobile/jquery-1.8.2.min.js" type="text/javascript"></script>
+		<script src="jquery-mobile/jquery.mobile-1.3.0.min.js" type="text/javascript"></script>
+		<script src="js/codiqa.js" type="text/javascript"></script>
+
+		<script src="js/main2.js" type="text/javascript"></script>
+		<script src="js/sql.js" type="text/javascript"></script>
+
+		<script src="js/rightmenu.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<!-- HOME PAGE -->
+		<div data-role="page" id="home" >
+			<div data-role="panel" id="mypanel" data-theme="a">
+				<ul data-role="listview" data-divider-theme="a" data-inset="false">
+					<li data-theme="a" data-icon="plane">
+						<a href="about.html" data-transition="slide">
+							About
+						</a>
+					</li>
+					<li data-theme="a" data-icon="comment">
+						<a href="#page9" data-transition="slide" id="openFeed">
+							Feedback
+						</a>
+					</li>
+					<li data-theme="a" data-icon="facebook" id="openFacebook">
+						<a href="#page9" data-transition="slide">
+							Facebook
+						</a>
+					</li>
+					<li data-theme="a" data-icon="linkedin" id="openLinkedin">
+						<a href="#page9" data-transition="slide" >
+							Linkedn
+						</a>
+					</li>
+					<li data-theme="a" data-icon="twitter" id="openTwitter">
+						<a href="#" data-transition="slide">
+							Twitter
+						</a>
+					</li>
+					<li data-theme="a">
+						<a href="disclaimer.html" data-transition="slide" data-icon="comment-alt">
+							Disclaimer
+						</a>
+					</li>
+				</ul>
+			</div><!-- /panel -->
+			<div data-theme="a" data-role="header" data-position="fixed">
+				<a data-role="button" data-transition="slide" data-theme="a" href="#mypanel"
+				   data-icon="info-sign" data-iconpos="notext" class="ui-btn-left">
+				</a>
+
+				<h3 >ATApp</h3>
+			</div>
+
+			<div data-role="content">
+				<div class="center-wrapper" style="margin:0px auto;">
+					<p style="text-align: center;">
+						<img  src="images/logo.png"  alt="Mymxlog">
+					</p>
+				</div>
+				<div>
+					<p data-mce-style="text-align: center;" style="text-align: center;">
+						<span style="font-size: medium;" data-mce-style="font-size: medium;"> <strong style="font-family: verdana, geneva;">
+							<font size="3">
+							</font>
+							</strong> <strong style="font-family: verdana, geneva; font-size: small;"> Aircraft ATA </strong> </span>
+						<span style="font-family: verdana, geneva; font-size: small;" data-mce-style="font-family: verdana, geneva; font-size: small;"> Chapter toolbox! </span>
+					</p>
+					<p data-mce-style="text-align: center;" style="text-align: center;">
+						<span style="font-family: verdana, geneva; font-size: small;" data-mce-style="font-family: verdana, geneva; font-size: small;"> Brought to you by&nbsp; <strong> mymxlog.com </strong> </span>
+					</p>
+				</div>
+
+				<ul  data-role="listview" id="menuini">
+					<li data-theme="a" data-icon="chevron-right">
+						<a  href="#byname"  data-transition="slide" >ATA by Chapters</a>
+					</li>
+					<li data-theme="a" data-icon="chevron-right">
+						<a href="#bynumber" data-transition="slide">ATA by Numbers</a>
+					</li>
+
+				</ul>
+
+				<div class="text-wrapper">
+					<p>&nbsp;</p>
+					<div class="ui-grid-a">
+						<div class="ui-block-a">
+							<div data-role="fieldcontain">
+								<input name="inpsearch" id="initsearch"  value="" type="search" placeholder="Find ATA..">
+							</div>
+						</div>
+						<div class="ui-block-b">
+							<a href="#" data-role="button" id="btnsearch" data-theme="a">
+								Go
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div data-role="tabbar" data-iconpos="top" data-theme="a">
+				<ul data-icon="none">
+					<li>
+						<a href="#byname"  data-transition="none" data-theme="" data-icon="font">
+							ATA Chapters
+						</a>
+					</li>
+					<li>
+						<a href="#bynumber" data-transition="none" data-theme="" data-icon="list-ol">
+							ATA Numbers
+						</a>
+					</li>
+					<li>
+						<a href="#search" data-transition="none" data-theme="" data-icon="envelope">
+							ATA Search
+						</a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+
+		<!-- BY Name Partial PAGE -->
+		<div data-role="page" id="byname" data-add-back-btn="true" data-rel="back">
+
+			<div data-theme="a" data-role="header" data-position="fixed">
+				<a href="index.html" data-role="button" data-icon="awesome-home" data-iconpos="notext" class="ui-btn-right"></a>
+				<h3>ATA Chapters</h3>
+			</div>
+
+			<div data-role="content">
+
+				<div data-role="collapsible" data-inset="false" data-theme="e">
+					<h3>GENERAL</h3>
+					<ul data-role="listview" id="general" >
+
+					</ul>
+				</div>
+
+				<div data-role="collapsible" data-inset="false" data-theme="b">
+					<h3>AIRFRAME SYSTEMS</h3>
+					<ul data-role="listview" id="airframesystems"  >
+
+					</ul>
+				</div>
+				<div data-role="collapsible" data-inset="false" data-theme="d">
+					<h3>STRUCTURES</h3>
+					<ul data-role="listview" id="structures" >
+
+					</ul>
+				</div>
+				<div data-role="collapsible" data-inset="false" data-theme="a">
+					<h3>PROPELLER/ROTOR</h3>
+					<ul data-role="listview" id="propellerrotor">
+
+					</ul>
+				</div>
+				<div data-role="collapsible" data-inset="false" data-theme="f">
+					<h3>POWER PLANT</h3>
+					<ul data-role="listview" id="powerplant" >
+
+					</ul>
+				</div>
+				<div data-role="collapsible" data-inset="false" data-theme="g">
+					<h3>OTHER</h3>
+					<ul data-role="listview" id="other" >
+
+					</ul>
+				</div>
+
+			</div>
+
+			<div data-role="tabbar" data-iconpos="top" data-theme="a">
+				<ul data-icon="none">
+					<li>
+						<a href="#byname"  data-transition="none" data-theme="" data-icon="font">
+							ATA Chapters
+						</a>
+					</li>
+					<li>
+						<a href="#bynumber" data-transition="none" data-theme="" data-icon="list-ol">
+							ATA Numbers
+						</a>
+					</li>
+					<li>
+						<a href="#search" data-transition="none" data-theme="" data-icon="envelope">
+							ATA Search
+						</a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+
+		<!-- BY NUmber Page -->
+		<div data-role="page" id="bynumber" data-add-back-btn="true">
+			<div data-theme="a" data-role="header" data-position="fixed">
+				<a href="index.html" data-role="button" data-icon="awesome-home" data-iconpos="notext" class="ui-btn-right"></a>
+				<h3>ATA Numbers</h3>
+			</div>
+			<ul data-role="listview" id="bynameitems2" data-autodividers="true">
+
+			</ul>
+
+			<div data-role="tabbar" data-iconpos="top" data-theme="a">
+				<ul data-icon="none">
+					<li>
+						<a href="#byname"  data-transition="none" data-theme="" data-icon="font">
+							ATA Chapters
+						</a>
+					</li>
+					<li>
+						<a href="#bynumber" data-transition="none" data-theme="" data-icon="list-ol">
+							ATA Numbers
+						</a>
+					</li>
+					<li>
+						<a href="#search" data-transition="none" data-theme="" data-icon="awesome-search">
+							ATA Search
+						</a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+
+		<!-- SEARCH PAGE -->
+		<div data-role="page" id="search" data-add-back-btn="true" data-rel="back">
+			<div data-theme="a" data-role="header" data-position="fixed">
+				<a href="index.html" data-role="button" data-icon="awesome-home" data-iconpos="notext" class="ui-btn-right"></a>
+
+				<h3>Search </h3>
+			</div>
+			<ul data-role="listview" id="bynameitems" data-theme="c" data-filter="true" data-filter-placeholder="Find ATA..">
+
+			</ul>
+			<div data-role="tabbar" data-iconpos="top" data-theme="a">
+				<ul data-icon="none">
+					<li>
+						<a href="#byname"  data-transition="none" data-theme="" data-icon="font">
+							ATA Chapters
+						</a>
+					</li>
+					<li>
+						<a href="#bynumber" data-transition="none" data-theme="" data-icon="list-ol">
+							ATA Numbers
+						</a>
+					</li>
+					<li>
+						<a href="#search" data-transition="none" data-theme="" data-icon="envelope">
+							ATA Search
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- LIST ITEMS PAGE -->
+		<div data-role="page" id="list" data-add-back-btn="true" data-rel="back">
+			<div data-theme="a" data-role="header" data-position="fixed">
+				<a href="index.html" data-role="button" data-icon="awesome-home" data-iconpos="notext" class="ui-btn-right"></a>
+				<h1 id="atachapters_header">ATA By Name</h1>
+			</div>
+			<a href="#" id="atachapters_text"></a>
+			<ul data-role="listview" id="todoItems"  data-divider-theme="a">
+
+			</ul>
+
+		</div>
+
+		<!-- DETAILS  -->
+		<div data-role="page" id="detail" data-add-back-btn="true" data-rel="back">
+			<div data-theme="a" data-role="header" data-position="fixed">
+				<a href="index.html" data-role="button" data-icon="awesome-home" data-iconpos="notext" class="ui-btn-right"></a>
+				<h1 id="atachapters_header">ATA Details</h1>
+			</div>
+			<p>
+				<div id="atadetails"></div>
+			</p>
+
+		</div>
+
+		<!-- Info Part -->
+		<div data-role="page" id="info" data-add-back-btn="true">
+			<div data-theme="c" data-role="header" data-position="fixed">
+
+				<h3>ATAppp</h3>
+			</div>
+			<div data-role="content" style="padding: 8px">
+				<ul data-role="listview" data-divider-theme="d" data-inset="false" id="menulinks">
+					<li data-theme="a">
+						<a href="about.html" data-transition="slide">
+							Abouts
+						</a>
+					</li>
+					<li data-theme="c">
+						<a href="#" data-transition="slide" id="openFeedback">
+							Feedback
+						</a>
+					</li>
+					<li data-theme="c" id="openFacebook">
+
+						Facebooook
+
+					</li>
+					<li data-theme="c">
+						<a href="#page9" data-transition="slide">
+							Linkdin
+						</a>
+					</li>
+					<li data-theme="c">
+						<a href="https://twitter.com/mymxlog" data-transition="slide">
+							Twitter
+						</a>
+					</li>
+					<li data-theme="c">
+						<a href="disclaimer.html" data-transition="slide">
+							Disclaimer
+						</a>
+					</li>
+				</ul>
+				<div style="">
+					<div id="logobig">aa</div>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
 
-        
   
