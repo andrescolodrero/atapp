@@ -1,24 +1,6 @@
 var app = {};
 
-function populateDatabase() {
-    
-    var localstg = localStorage.getItem("firststart");
-     app.openDb();
-   if(localstg == null)  {
-           
-        app.deleteTable();
-      app.createTable();
-       app.insertData();
-        localStorage.setItem("firststart", true);
-        console.log("db created!");
-       $.mobile.loading( 'hide');
-        
-   } else {
-      
-      console.log("not anymore!");
-        
-  }
-}
+
 
 app.openDb = function() {
     if(window.sqlitePlugin !== undefined) {
@@ -56,7 +38,7 @@ app.insertData = function() {
            textonly: false,
 	                text: "Wait please. First time initializing app.",
 	        textVisible: true,
-	        theme: "a",
+	        theme: "d",
 	        html: ""
           });
         // Here Start the transaction,
@@ -78,7 +60,7 @@ app.insertData = function() {
                        textonly: false,
                                 text: "Checking Ata Codes.",
                         textVisible: true,
-                        theme: "b",
+                        theme: "d",
                         html: ""
                       });
                      
@@ -106,6 +88,7 @@ app.insertData = function() {
                      
                  }
                  if(numberOfTransactions == 0) {
+                     localStorage.setItem("firststartDB", true);
                      $.mobile.loading( "hide" );
                    
                      
@@ -256,7 +239,7 @@ app.getChapterDetail = function(number, detailtitle) {
         
         var rowws = rs.rows.length;
         if (rowws != 0) {
-            $("#atadetails").append("<h2>" + detailtitle + "</h2>" + rs.rows.item(0).Details);
+            $("#atadetails").append("<h2>" + detailtitle + "</h2><p>" + rs.rows.item(0).Details + "</p>");
 		}
  
 	}
@@ -287,41 +270,41 @@ app.viewDataByChapter = function(chapter, headertext) {
 
 
 // get all 
-app.getAllItems = function() {
+app.getAllItems = function(letter) {
+
 
     $("#bynameitems2").empty();
     
    // $("#todoItems").append("<li data-role='list-divider' role='heading' data-inset='true' data-divider-theme='c' id='headerdivider'>" + headertext + "<li>");
     
-	var renderTodo = function (row) {
-	 //return "<li>" + row.Name  + " " + row.Number + "</li>";
-        //$("#todoItems").append("<li>" + row.Name  + " " + row.Number + "</li>");
-	}
+       
    
-	var render3 = function (tx, rs) {
-        	
-          // rowOutput.empty();
- 
-		var rowOutput = "";
-		var todoItems = document.getElementById("bynameitems2");
-        var rowws = rs.rows.length;
-        var textToInsert = [];
-		for (var i = 0; i < rs.rows.length; i++) {
-			//rowOutput += renderTodo(rs.rows.item(i));
-             // $("todoItems").append("<li>Item</li>")
-            textToInsert += "<li id='"  + rs.rows.item(i).Number + "'>" + rs.rows.item(i).Name + " - " + rs.rows.item(i).Number + "</li>";
-		}
+           var render3 = function (tx, rs) {
+                
+              // rowOutput.empty();
+     
+            var rowOutput = "";
+            var todoItems = document.getElementById("bynameitems2");
+            var rowws = rs.rows.length;
+            var textToInsert = [];
+            for (var i = 0; i < rs.rows.length; i++) {
+                //rowOutput += renderTodo(rs.rows.item(i));
+                 // $("todoItems").append("<li>Item</li>")
+                textToInsert += "<li id='"  + rs.rows.item(i).Number + "'>" + rs.rows.item(i).Name + " - " + rs.rows.item(i).Number + "</li>";
+            }
         
-      $("#bynameitems2").append(textToInsert);
-		//todoItems.innerHTML = rowOutput;
-        $("#bynameitems2").listview('refresh');
+              $("#bynameitems2").append(textToInsert);
+                //todoItems.innerHTML = rowOutput;
+            $("#bynameitems2").listview('refresh');
+           }
         
-	}
     
 	var db = app.db;
 	db.transaction(function(tx) {     
-		tx.executeSql("SELECT * FROM atacodes2 order by Name", [], 
+		tx.executeSql("SELECT * FROM atacodes2 where Name like ? order by Name", [letter], 
 					  render3, 
 					  app.OnSuccess);
 	});
 }
+           
+
